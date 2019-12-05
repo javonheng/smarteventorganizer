@@ -40,7 +40,7 @@ class Register extends Component {
       password2: this.state.password2
     }
     console.log(newUser)
-    axios.post("http://localhost:4000/userslogin/register", newUser)
+    axios.post("https://smarteventorganizer.herokuapp.com/userslogin/register", newUser)
       .then(res => console.log(res.data))
     alert("Your account has been successfully created!")
     window.location = '/'

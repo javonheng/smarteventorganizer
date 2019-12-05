@@ -42,7 +42,7 @@ class LoginLanding extends Component {
     }
     console.log(userData);
 
-    axios.post("http://localhost:4000/userslogin/login", userData)
+    axios.post("https://smarteventorganizer.herokuapp.com/userslogin/login", userData)
       .then(res => {if (res.data.success === true) {
         console.log(res.data)
         this.login()
