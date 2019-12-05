@@ -1,0 +1,138 @@
+#mainattendance {
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  color: #323232;
+  margin: auto;
+  text-align: center;
+}
+
+#mainattendance table {
+  margin: auto;
+}
+
+#mainattendance table tr td {
+  padding-bottom: 20px;
+}
+
+#attendees {
+  vertical-align: top;
+}
+
+#mainattendance h1 {
+  font-size: 40px;
+}
+
+/** Medium **/
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+  #attendees table, thead, tbody, th, td, tr {
+    display: block;
+    text-align: left;
+    border: none;
+
+  }
+
+  #attendees thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+  #attendees tr { border: 1px solid #ccc; }
+
+  #attendees td {
+    /* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  #attendees td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 2px;
+		left: 6px;
+		width: 45%;
+		white-space: nowrap;
+	}
+
+  /*
+	Label the data
+	*/
+	#attendees td:nth-of-type(1):before { content: "Name"; }
+	#attendees td:nth-of-type(2):before { content: "Event"; }
+	#attendees td:nth-of-type(3):before { content: "Pax"; }
+	#attendees td:nth-of-type(4):before { content: "Remarks"; }
+	#attendees td:nth-of-type(5):before { content: "Present"; }
+	#attendees td:nth-of-type(6):before { content: "Remove"; }
+
+  #mainattendance table tr td {
+    text-align: center;
+  }
+}
+
+/** Small Mobile **/
+@media only screen and (max-width: 768px){
+  #attendees table, thead, tbody, th, td, tr {
+    display: block;
+    text-align: left;
+    border: none;
+
+  }
+
+  #attendees thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+  #attendees tr { border: 1px solid #ccc; }
+
+  #attendees td {
+    /* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  #attendees td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 2px;
+		left: 6px;
+		width: 45%;
+		white-space: nowrap;
+	}
+
+  /*
+	Label the data
+	*/
+	#attendees td:nth-of-type(1):before { content: "Name"; }
+	#attendees td:nth-of-type(2):before { content: "Event"; }
+	#attendees td:nth-of-type(3):before { content: "Pax"; }
+	#attendees td:nth-of-type(4):before { content: "Remarks"; }
+	#attendees td:nth-of-type(5):before { content: "Present"; }
+	#attendees td:nth-of-type(6):before { content: "Remove"; }
+
+  #mainattendance table tr td {
+    text-align: center;
+  }
+
+  #mainattendance h1 {
+    max-width: 100vw;
+    word-wrap: break-word;
+    font-size: 30px;
+  }
+
+  #edm iframe, img {
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+}

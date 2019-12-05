@@ -1,0 +1,85 @@
+#maineventlist {
+    font-family: 'Crimson Text', serif;
+    font-size: 20px;
+    color: #323232;
+    margin: auto;
+    text-align: center;
+}
+
+#maineventlist label {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+#maineventlist table th {
+  font-weight: 600;
+  font-size: 25px;
+}
+
+#maineventlist h2 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#maineventlist table a {
+  text-decoration: none;
+  color: #000b4f;
+  text-shadow: 2px 3px 5px #6d6d6d;
+}
+
+#maineventlist table {
+  margin: auto;
+  border: 2px solid #ebebeb;
+  border-top: none;
+  border-bottom: none;
+  margin-bottom: 20px;
+  padding: 0px 20px 0px 20px;
+}
+/** Mobile **/
+@media only screen and (max-width: 1024px) {
+  #maineventlist table, thead, tbody, th, td, tr {
+    display: block;
+    text-align: left;
+    border: none;
+
+  }
+
+  #maineventlist thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+  #maineventlist tr { border: 1px solid #ccc; }
+
+  #maineventlist td {
+    /* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  #maineventlist td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 2px;
+		left: 6px;
+		width: 45%;
+		white-space: nowrap;
+	}
+
+  /*
+	Label the data
+	*/
+	#maineventlist td:nth-of-type(1):before { content: "Name"; }
+	#maineventlist td:nth-of-type(2):before { content: "Start Date"; }
+	#maineventlist td:nth-of-type(3):before { content: "End Date"; }
+	#maineventlist td:nth-of-type(4):before { content: "Type"; }
+	#maineventlist td:nth-of-type(5):before { content: "Description"; }
+	#maineventlist td:nth-of-type(6):before { content: "Actions"; }
+
+}

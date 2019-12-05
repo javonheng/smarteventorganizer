@@ -1,0 +1,97 @@
+#mainsignup {
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  color: #323232;
+  margin: auto;
+  text-align: center;
+}
+
+#mainsignup ul li {
+  list-style: none;
+}
+
+#form-details {
+  margin: 0px 450px 0px 450px;
+  position: relative;
+  background-color: white;
+  border: 2px solid #ebebeb;
+  border-top: none;
+  border-bottom: none;
+}
+
+.breakline {
+  position: relative;
+  border-top: dashed 3px #323232;
+  display: block;
+  margin-top: 70px;
+}
+
+.breakline span {
+  margin: auto;
+  position: relative;
+  display: inline-block;
+  font-size: 50px;
+  padding: 0px 10px 0px 15px;
+  background-color: #ffffff;
+  color: #323232;
+  top: -50px;
+  width: 650px;
+
+}
+
+#mainsignup-mobile {
+  display: none;
+  visibility: hidden;
+}
+
+/** Mobile **/
+@media only screen and (max-width: 1024px) {
+  /** web **/
+  #mainsignup {
+    display: none;
+    visibility: hidden;
+  }
+
+  #mainsignup-mobile {
+    display: block;
+    visibility: visible;
+  }
+
+  .breakline-mobile {
+    position: relative;
+    border-top: dashed 3px #323232;
+    display: block;
+    margin-top: 70px;
+    width: 100vw;
+  }
+
+  #mainsignup-mobile .breakline-mobile span {
+    margin: auto;
+    max-width: 48%;
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    padding: 0 3% 0 3%;
+    background-color: #ffffff;
+    color: #323232;
+    top: -30px;
+    left: 25%;
+    text-align: center;
+  }
+
+  #form-details-mobile {
+    margin: auto;
+    text-align: center;
+    position: relative;
+    background-color: white;
+  }
+
+  #form-details-mobile ul li {
+    list-style: none;
+  }
+
+  form {
+    text-align: center;
+  }
+
+}

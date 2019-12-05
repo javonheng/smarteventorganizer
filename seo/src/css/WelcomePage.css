@@ -1,0 +1,61 @@
+#mainwelcomepage {
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  color: #323232;
+  margin: auto;
+  text-align: center;
+}
+
+#mainwelcomepage h1 {
+  font-size: 100px;
+  text-shadow: 3px 3px 5px #829cd0;
+}
+
+#mainwelcomepage table {
+  margin: auto;
+}
+
+#mainwelcomepage table td {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#newevent {
+  background-color: #ebebeb;
+  color: #323232;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px 5px rgba(0,0,0,0.25);
+  width: 450px;
+  height: 35px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+#newevent:hover{
+  cursor: pointer;
+  animation-name: background-color;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+} @keyframes background-color {
+  100% {
+    background-color: #6d6d6d;
+  }
+}
+
+/** Mobile **/
+@media only screen and (max-width: 764px) {
+  #mainwelcomepage h1 {
+    font-size: 50px;
+    text-shadow: 3px 3px 5px #829cd0;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  #newevent {
+    width: 90%;
+  }
+
+  .loginbutton {
+    width: 90%;
+  }
+}

@@ -1,0 +1,103 @@
+.App {
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  color: #323232;
+  margin: auto;
+  text-align: center;
+}
+
+.App-header {
+  color: #000b4f;
+}
+
+.App-table {
+  text-align: center;
+  width: 90%;
+  margin: 10px auto;
+  border-collapse: collapse;
+}
+.App-table th {
+  border: 1px solid black;
+  font-size: 24px;
+}
+.App-table td {
+  border: none;
+  font-size: 18px;
+}
+
+.App-table tbody td a {
+  text-decoration: none;
+  color: #323232;
+  text-shadow: 2px 3px 5px #6d6d6d;
+}
+
+.removebutton {
+  background-color: #20368f;
+  color: #ebebeb;
+  border-radius: 15px;
+  width: 70px;
+  height: 20px;
+  border: none;
+  margin-bottom: 5px;
+}
+
+.removebutton:hover{
+  cursor: pointer;
+  animation-name: background-color;
+  animation-duration: 100ms;
+  animation-fill-mode: both;
+} @keyframes background-color {
+  100% {
+    background-color: #829cd0;
+  }
+}
+
+/** Mobile **/
+@media only screen and (max-width: 1020px) {
+
+  .App-table {
+    border: none;
+  }
+
+  .App-table table, thead, tbody, th, td, tr {
+    display: block;
+    text-align: left;
+  }
+
+  .App-table thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+  .App-table tr { border: 1px solid #ccc; }
+
+  .App-table td {
+    /* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+    max-width: 100%;
+    word-break: break-word;
+  }
+
+  .App-table td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 2px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+
+  /*
+	Label the data
+	*/
+	.App-table td:nth-of-type(1):before { content: "File"; }
+	.App-table td:nth-of-type(2):before { content: "Upload"; }
+	.App-table td:nth-of-type(3):before { content: "Size"; }
+	.App-table td:nth-of-type(4):before { content: ""; }
+}

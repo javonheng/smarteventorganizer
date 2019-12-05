@@ -1,0 +1,96 @@
+#maineditor {
+  font-family: 'Crimson Text', serif;
+  font-size: 13px;
+  color: #323232;
+  margin: auto;
+  text-align: center;
+  display: block;
+  visibility: visible;
+}
+
+#maineditor h1 {
+  font-size: 40px;
+}
+
+#ui-editor{
+  margin-left: 3%;
+  margin-bottom: 50px;
+  display: block;
+  visibility: visible;
+}
+
+#maineditor-laptop, #maineditor-tablet {
+  display: none;
+  visibility: hidden;
+}
+
+/** Small Laptop **/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #maineditor, #maineditor-tablet tablet{
+    display: none;
+    visibility: hidden;
+  }
+
+  #maineditor-laptop, #ui-editor-laptop {
+    display: block;
+    visibility: visible;
+    max-width: 100vw;
+  }
+
+  #maineditor-laptop h1 {
+    text-align: center;
+    font-size: 30px;
+  }
+  #ui-editor-laptop {
+    margin: 0;
+    max-height: 700px;
+  }
+}
+
+/** Tablet **/
+@media only screen and (min-width: 426px) and (max-width: 768px) {
+  #maineditor, #maineditor-laptop {
+    display: none;
+    visibility: hidden;
+  }
+
+  #maineditor-tablet, #ui-editor-tablet {
+    display: block;
+    visibility: visible;
+    max-width: 100vw;
+  }
+
+  #maineditor-tablet h1 {
+    text-align: center;
+    font-size: 30px;
+  }
+  #ui-editor-tablet {
+    margin: 0;
+    overflow: scroll;
+  }
+}
+
+/** Tablet **/
+@media only screen and (max-width: 426px) {
+  #maineditor-tablet, #maineditor-laptop {
+    display: none;
+    visibility: hidden;
+  }
+
+  #maineditor {
+    display: block;
+    visibility: visible;
+    max-width: 90vw;
+    max-height: 100vh;
+    overflow: scroll;
+  }
+
+  #maineditor-tablet h1 {
+    text-align: center;
+    font-size: 30px;
+  }
+  #ui-editor-tablet {
+    margin: 0;
+    overflow: scroll;
+  }
+}

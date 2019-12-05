@@ -1,0 +1,20 @@
+#maininventory {
+  font-family: 'Crimson Text', serif;
+  font-size: 18px;
+  color: #323232;
+  margin: auto;
+  text-align: center;
+}
+
+#maininventory h1 {
+  font-size: 40px;
+}
+
+#inventory-table {
+  margin-right: 3%;
+}
+
+#logs-search {
+  max-width: 100%;
+  word-wrap: break-word;
+}

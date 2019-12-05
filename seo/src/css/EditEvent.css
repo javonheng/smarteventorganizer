@@ -1,0 +1,15 @@
+#editevent {
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  color: #323232;
+  margin: auto;
+  text-align: center;
+}
+
+#editevent h1 {
+  font-weight: bold;
+}
+
+#editevent label, p {
+  font-size: 24px;
+}

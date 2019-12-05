@@ -1,0 +1,78 @@
+#mainregister {
+  font-family: 'Crimson Text', serif;
+  font-size: 18px;
+  color: #323232;
+  text-align: center;
+  border: 2px solid #ebebeb;
+  border-top: none;
+  border-bottom: none;
+  margin: 0px 250px 0px 250px;
+}
+
+#mainregister h2 {
+  padding-top: 50px;
+  font-size: 40px;
+}
+
+#mainregister table {
+  margin: auto;
+  width: 70%;
+}
+
+#mainregister table button {
+  display: block;
+  margin: auto;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+#mainregister table .input {
+  width: 80%;
+}
+
+#mainregister-mobile {
+  display: none;
+  visibility: hidden;
+}
+
+/** Mobile **/
+@media only screen and (max-width: 1024px) {
+  /** web **/
+  #mainregister {
+    display: none;
+    visibility: hidden;
+  }
+  /**mobile**/
+  #mainregister-mobile {
+    display: block;
+    visibility: visible;
+    font-family: 'Crimson Text', serif;
+    font-size: 16px;
+    color: #323232;
+    margin: auto;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  #mainregister-mobile h2 {
+    padding-top: 50px;
+    font-size: 40px;
+  }
+
+  #mainregister-mobile table button {
+    display: block;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+
+  #mainregister-mobile table {
+    margin: auto;
+    width: 70%;
+  }
+
+  #mainregister-mobile table td {
+    text-align: center;
+  }
+
+}

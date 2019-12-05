@@ -1,0 +1,21 @@
+.dropzone {
+    background: #ebebeb;
+    border-radius: 50%;
+    border: 2px dashed #6d6d6d;
+    height: 300px;
+    max-width: 600px;
+    font-family: 'Crimson Text', serif;
+    font-size: 40px;
+    color: #323232;
+    margin: auto;
+    margin-top: 100px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+/** Mobile **/
+@media only screen and (max-width: 975px) {
+  .dropzone {
+    margin-right: 4%;
+  }
+}

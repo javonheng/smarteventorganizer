@@ -1,0 +1,48 @@
+#mainpublicity {
+  font-family: 'Crimson Text', serif;
+  font-size: 18px;
+  color: #323232;
+  margin: auto;
+  text-align: center;
+}
+
+#mainpublicity h1 {
+  font-size: 40px;
+}
+
+#mainpublicity table {
+  margin: auto;
+  width: 80%;
+}
+
+#mainpublicity table td {
+  margin: auto;
+}
+
+#mainpublicity #sm-table {
+  margin: auto;
+  width: 100%;
+}
+
+#sm-table td {
+  margin: auto;
+  table-layout: fixed;
+}
+
+/** Tablet **/
+@media only screen and (max-width: 768px) {
+  #mainpublicity h1 {
+    text-align: left;
+    font-size: 30px;
+  }
+
+  #mainpublicity table {
+    margin: auto;
+    min-width: 100%;
+  }
+
+
+  #sm-table table tr td {
+    padding-right: 3%;
+  }
+}

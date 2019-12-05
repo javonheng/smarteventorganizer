@@ -1,0 +1,76 @@
+#main-checklist {
+  font-family: 'Crimson Text', serif;
+  font-size: 25px;
+  color: #323232;
+  margin: auto;
+  text-align: center;
+}
+
+#main-checklist header {
+  font-size: 80px;
+  text-align: left;
+  padding-left: 50px;
+}
+
+#main-checklist ul li {
+  list-style: none;
+}
+#main-checklist a {
+  text-decoration: none;
+  color: #000b4f;
+}
+#proj-details {
+  float: left;
+  width: 30%;
+  position: fixed;
+  margin-top: 7%;
+}
+
+#checklist {
+  font-family: 'Alegreya', serif;
+  float: right;
+  text-align: left;
+  width: 70%;
+}
+
+#checklist label {
+  text-decoration: underline;
+}
+
+#main-checklist input[type="checkbox"] {
+    background-color: #829cd0;
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+    transform: scale(2);
+    margin-right: 10px;
+}
+
+/** Mobile **/
+@media only screen and (max-width: 700px) {
+  /** web **/
+
+  #main-checklist {
+    width: 100vw;
+    font-size: 16px;
+  }
+  #proj-details {
+    position: fixed;
+    margin: auto;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 40%;
+    background-color: #829cd0;
+    color: #ededed;
+  }
+
+  #checklist {
+    position: absolute;
+    z-index: -1;
+    width: 100vw;
+    text-align: center;
+    top: 50%;
+  }
+}

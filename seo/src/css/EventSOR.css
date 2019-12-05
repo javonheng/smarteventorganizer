@@ -1,0 +1,149 @@
+#maineventsor {
+  font-family: 'Crimson Text', serif;
+  font-size: 16px;
+  color: #323232;
+  margin: auto;
+  text-align: center;
+}
+
+#maineventsor h1 {
+  font-size: 40px;
+}
+#top-left {
+  float: left;
+  margin: auto;
+  margin-top: 230px;
+}
+.clearfloat {
+  clear: both;
+}
+#make-center {
+  padding-top: 20px;
+}
+
+#mid-right {
+  float: right;
+  font-size: 40px;
+  margin-top: 275px;
+  padding: 0px 50px 0px 50px;
+}
+
+#btm-left {
+  font-size: 40px;
+  padding-right: 100px;
+}
+
+#googledata a {
+  text-decoration: none;
+  color: #000b4f;
+}
+
+#googledata table {
+  margin: auto;
+}
+
+.budget table {
+  margin: auto;
+  font-family: 'Crimson Text', serif;
+  text-align: center;
+  font-size: 18px;
+}
+
+.budget table td {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/** web **/
+#maineventsor {
+  display: block;
+  visibility: visible;
+}
+
+#maineventsor-mobile {
+  display: none;
+  visibility: hidden;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+
+  #maineventsor h1 {
+    margin: 0;
+  }
+  #mid-right {
+    float: none;
+    margin: auto;
+  }
+  .data-grid-container .data-grid .cell {
+    width: 1000%;
+  }
+}
+
+/** Mobile **/
+@media only screen and (max-width: 768px) {
+
+  #maineventsor {
+    display: none;
+    visibility: hidden;
+  }
+
+  #maineventsor-mobile {
+    display: block;
+    visibility: visible;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  .budget table {
+  margin-left: -10%;
+  }
+
+  #exceldata h2 {
+    font-size: 28px;
+  }
+
+  #exceldata {
+  }
+  .data-grid-container .data-grid .cell.read-only {
+    background: whitesmoke;
+    white-space: nowrap;
+    color: #999;
+    text-align: center;
+  }
+
+  .data-grid-container .data-grid .cell {
+    width: 600%;
+  }
+
+  #googledata-mobile a {
+    text-decoration: none;
+    color: #000b4f;
+  }
+  #googledata-mobile {
+    font-size: 20px;
+  }
+
+  #gdata {
+    font-size: 18px;
+    text-align: center;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+
+  #gdata img {
+    max-width: 90%;
+    height: auto;
+    padding-right: 3%;
+    padding-bottom: 3%;
+  }
+}
+
+@media only screen and (max-width: 375px){
+  #mid-right {
+    float: none;
+    margin: auto;
+  }
+  .data-grid-container .data-grid .cell {
+    width: 500%;
+  }
+}
