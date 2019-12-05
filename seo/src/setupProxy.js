@@ -2,13 +2,6 @@ const proxy = require('http-proxy-middleware')
 
 module.exports = function(app) {
     // add other server routes to path array
-    app.use(proxy(['/createeventapi' ], { target: 'http://localhost:4000' }));
-    app.use(proxy(['/updatenewsapi' ], { target: 'http://localhost:4000' }));
-    app.use(proxy(['/addmembersapi' ], { target: 'http://localhost:4000' }));
-    app.use(proxy(['/addagendasapi' ], { target: 'http://localhost:4000' }));
-    app.use(proxy(['/rentalstatusapi' ], { target: 'http://localhost:4000' }));
-    app.use(proxy(['/attendeesapi' ], { target: 'http://localhost:4000' }));
-    app.use(proxy(['/savedpresetapi' ], { target: 'http://localhost:4000' }));
-    app.use(proxy(['/userslogin' ], { target: 'http://localhost:4000' }));
-    app.use(proxy(['/upload', '/files', '/files/:filename', '/image/:filename', '/files/:id' ], { target: 'http://localhost:5005' }));
+    app.use(proxy(['/createeventapi', '/updatenewsapi', '/addmembersapi', '/addagendasapi', '/rentalstatusapi', '/attendeesapi', '/savedpresetapi', '/userslogin'], { target: 'http://127.0.0.1:4000', secure: false, changeOrigin: true }));
+    app.use(proxy(['/upload', '/files', '/files/:filename', '/image/:filename', '/files/:id' ], { target: 'http://127.0.0.1:5005', secure: false, changeOrigin: true }));
 }
