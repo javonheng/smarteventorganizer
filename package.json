@@ -26,6 +26,7 @@
     "gapi-script": "0.0.5",
     "gridfs-stream": "^1.1.1",
     "hamoni-sync": "^1.1.1",
+    "http-proxy-middleware": "^0.20.0",
     "is-empty": "^1.2.0",
     "jquery": "^3.4.1",
     "jsonwebtoken": "^8.5.1",
