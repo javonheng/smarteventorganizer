@@ -81,5 +81,6 @@
   },
   "keywords": [],
   "author": "Javon Heng",
-  "license": "ISC"
+  "license": "ISC",
+  "proxy": "http://localhost:4000"
 }
