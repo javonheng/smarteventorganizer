@@ -49,7 +49,7 @@ class CreateEvent extends Component {
   }
 
   componentDidMount() {
-  axios.get('http://localhost:4000/createeventapi/')
+  axios.get('/createeventapi/')
     .then(response => {
         this.setState({
           newevent: response.data.map(newevent1 => newevent1.name),
@@ -145,7 +145,7 @@ class CreateEvent extends Component {
 
     console.log(newEvent);
     if (this.validateForm()) {
-      axios.post('http://localhost:4000/createeventapi/add', newEvent)
+      axios.post('/createeventapi/add', newEvent)
         .then(res => console.log(res.data));
     }
     window.location = '/welcomepage';

@@ -17,7 +17,7 @@ class WelcomePage extends Component {
   }
 
   componentDidMount(){
-    /*axios.get('http://localhost:4000/userslogin/')
+    /*axios.get('/userslogin/')
       .then(response => {
         this.setState({ users: response.data })
       })
@@ -25,7 +25,7 @@ class WelcomePage extends Component {
         console.log(error);
       })*/
       console.log(localStorage.getItem('isLoggedIn'))
-    axios.get('http://localhost:4000/createeventapi/')
+    axios.get('/createeventapi/')
       .then(response => {
         this.setState({
           newevent: response.data.map(user => user.name),

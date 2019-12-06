@@ -81,7 +81,7 @@ class EventSOR extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/createeventapi/')
+    axios.get('/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })

@@ -45,7 +45,7 @@ export default class EventList extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/createeventapi/')
+    axios.get('/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
@@ -55,7 +55,7 @@ export default class EventList extends Component {
   }
 
   deleteEvent(id) {
-    axios.delete('http://localhost:4000/createeventapi/'+id)
+    axios.delete('/createeventapi/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

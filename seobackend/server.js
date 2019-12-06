@@ -91,7 +91,9 @@ const agendasRouter = require('./routes/agenda')
 const rentalStatusRouter = require('./routes/rentalstatus')
 const attendeeRouter = require('./routes/attendee')
 const savepresetRouter = require('./routes/savepreset')
-const userslogin = require("./routes/userslogin");
+const userslogin = require("./routes/userslogin")
+const mediaitems = require("./mediaitems")
+const allfiles = require("./allfiles")
 
 app.use('/createeventapi', createEventRouter)
 //app.use('/createchecklistapi', createChecklistRouter)
@@ -101,6 +103,8 @@ app.use('/addagendasapi', agendasRouter)
 app.use('/rentalstatusapi', rentalStatusRouter)
 app.use('/attendeesapi', attendeeRouter)
 app.use('/savedpresetapi', savepresetRouter)
+app.use('/mediaitems', mediaitems)
+app.use('/allfiles', allfiles)
 
 // Passport middleware
 app.use(passport.initialize());

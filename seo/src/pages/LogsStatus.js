@@ -64,14 +64,14 @@ class LogsStatus extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/createeventapi/')
+    axios.get('/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
       .catch((error) => {
         console.log(error);
       })
-    axios.get('http://localhost:4000/rentalstatusapi/')
+    axios.get('/rentalstatusapi/')
       .then(response => {
         this.setState({ rental: response.data })
       })
@@ -141,7 +141,7 @@ class LogsStatus extends Component {
       description: this.state.description,
     }
     console.log(newRental);
-    axios.post('http://localhost:4000/rentalstatusapi/add', newRental)
+    axios.post('/rentalstatusapi/add', newRental)
       .then(res => console.log(res.data));
     window.location.reload()
   }
@@ -157,13 +157,13 @@ class LogsStatus extends Component {
 
     console.log(newRental);
 
-    axios.post('http://localhost:4000/rentalstatusapi/update/'+id, newRental)
+    axios.post('/rentalstatusapi/update/'+id, newRental)
       .then(res => console.log(res.data));
     window.location.reload()
   }
 
   deleteEvent = (id) => {
-    axios.delete('http://localhost:4000/rentalstatusapi/'+id)
+    axios.delete('/rentalstatusapi/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

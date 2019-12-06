@@ -23,15 +23,15 @@ class AddFiles extends Component {
     var data = new FormData();
     //var imagedata = document.querySelector('input[type="file"]').files[0];
     data.append('file', acceptedFiles[0]);
-    axios.post('http://localhost:5005/upload', data)
-      .then(res => console.log(res.data));
-      alert(
+    axios.post('/allfiles/upload', data)
+      .then(window.alert(
         'Upload Successful'
-      )
+      ))
+      .catch(err => console.log(err))
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/createeventapi/')
+    axios.get('/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })

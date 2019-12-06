@@ -26,7 +26,7 @@ class EventToDo extends Component {
 
   componentDidMount() {
 
-    axios.get('http://localhost:4000/createeventapi/')
+    axios.get('/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       console.log(this.state.events)
@@ -35,7 +35,7 @@ class EventToDo extends Component {
         console.log(error);
       })
     this.getGEvents()
-    axios.get('http://localhost:4000/addagendasapi/')
+    axios.get('/addagendasapi/')
       .then(response => {
         this.setState({ newagenda: response.data })
       console.log(this.state.newagenda)
@@ -87,7 +87,7 @@ eventStyleGetter = (event, start, end, isSelected) => {
     const r = window.confirm(pEvent.title+" - "+pEvent.desc+". Would you like to remove this event?")
 
      if(r === true){
-         axios.delete('http://localhost:4000/addagendasapi/'+ pEvent.id)
+         axios.delete('/addagendasapi/'+ pEvent.id)
            .then(response => { console.log(response.data)});
          this.setState({
            newagenda: this.state.newagenda.filter(el => el._id !== pEvent.id)
@@ -145,7 +145,7 @@ getEvents = () => {
       title: title,
       desc: desc,
     }
-    axios.post('http://localhost:4000/addagendasapi/add', newAgenda)
+    axios.post('/addagendasapi/add', newAgenda)
       .then(res => console.log(res.data));
     window.location.reload()
  }

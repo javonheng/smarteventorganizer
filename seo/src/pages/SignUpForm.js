@@ -17,7 +17,7 @@ export default class SignUpForm extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/createeventapi/')
+    axios.get('/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
@@ -37,14 +37,14 @@ export default class SignUpForm extends Component {
     this.setState({
       event: e.target.value,
     })
-    axios.get('http://localhost:4000/createeventapi/'+e.target.value) //or this.state.event (id)
+    axios.get('/createeventapi/'+e.target.value) //or this.state.event (id)
       .then(response => {
-        this.setState({ selectedEvent: response.data })
+        this.setState({ selectedEvent: response.data.name })
       })
       .catch((error) => {
         console.log(error);
       })
-    console.log(this.state.event)
+    console.log(this.state.selectedEvent.name)
     console.log(this.state.selectedEvent)
   }
 
@@ -73,14 +73,14 @@ export default class SignUpForm extends Component {
 
     const newAttendee = {
       name: this.state.name,
-      event: this.state.event,
+      event: this.state.selectedEvent,
       pax: this.state.pax,
       remarks: this.state.remarks,
       isPresent: this.state.isPresent,
     }
 
     if (this.validateForm()) {
-      axios.post('http://localhost:4000/attendeesapi/add', newAttendee)
+      axios.post('/attendeesapi/add', newAttendee)
         .then(res => console.log(res.data));
     }
     alert('Received! See you there! ')
@@ -91,7 +91,7 @@ export default class SignUpForm extends Component {
       <div>
         <div id="mainsignup">
 
-          <div class="breakline"><span> Please Sign Up for the Event! </span></div>
+          <div className="breakline"><span> Please Sign Up for the Event! </span></div>
           <div id="form-details">
             <h3>Event Details:</h3>
             <ul>
@@ -158,7 +158,7 @@ export default class SignUpForm extends Component {
 
         <div id="mainsignup-mobile">
 
-          <div class="breakline-mobile"><span> Please Sign Up for the Event! </span></div>
+          <div className="breakline-mobile"><span> Please Sign Up for the Event! </span></div>
           <div id="form-details-mobile">
             <h3>Event Details:</h3>
             <ul>

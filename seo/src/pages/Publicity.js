@@ -25,14 +25,14 @@ class Publicity extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/createeventapi/')
+    axios.get('/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
       .catch((error) => {
         console.log(error);
       })
-    axios.get('http://localhost:4000/savedpresetapi/5d8c639d37df76d7fde95b4b')
+    axios.get('/savedpresetapi/5d8c639d37df76d7fde95b4b')
       .then(response => {
         this.setState({
           postid: response.data.postid,
@@ -51,7 +51,7 @@ class Publicity extends Component {
       postid: this.state.postid,
       pagename: this.state.pagename,
     }
-    axios.post('http://localhost:4000/savedpresetapi/update/5d8c639d37df76d7fde95b4b', newpreset)
+    axios.post('/savedpresetapi/update/5d8c639d37df76d7fde95b4b', newpreset)
       .then(res => console.log(res.data))
     window.location.reload()
   }

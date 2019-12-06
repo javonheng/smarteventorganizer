@@ -38,7 +38,7 @@ class Attendance extends Component {
     super(props)
     this.state={
       events: [],
-      value: 'http://10.27.124.29:8000/signup',
+      value: 'https://smarteventorganizer.herokuapp.com/signup',
       size: 128,
       fgColor: '#000000',
       bgColor: '#ffffff',
@@ -61,16 +61,17 @@ class Attendance extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:4000/createeventapi/')
+    axios.get('/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
       .catch((error) => {
         console.log(error);
       })
-    axios.get('http://localhost:4000/attendeesapi/')
+    axios.get('/attendeesapi/')
       .then(response => {
         this.setState({ attendees: response.data })
+        console.log(response)
       })
       .catch((error) => {
         console.log(error);
@@ -82,7 +83,7 @@ class Attendance extends Component {
   }
 
   deleteAttendee(id) {
-    axios.delete('http://localhost:4000/attendeesapi/'+id)
+    axios.delete('/attendeesapi/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -105,7 +106,7 @@ class Attendance extends Component {
       isPresent: !presc,
     }
     console.log(newPresence)
-    axios.post('http://localhost:4000/attendeesapi/update/'+id, newPresence)
+    axios.post('/attendeesapi/update/'+id, newPresence)
       .then(res => console.log(res.data));
   }
 
