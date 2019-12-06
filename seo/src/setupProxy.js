@@ -1,5 +1,5 @@
 const proxy = require('http-proxy-middleware')
-const url = `https://smarteventorganizer.herokuapp.com:${process.env.PORT}` || 'http://localhost:4000'
+const url = 'http://localhost:4000'//`https://smarteventorganizer.herokuapp.com:${process.env.PORT}` || 
 
 module.exports = function(app) {
     // add other server routes to path array
