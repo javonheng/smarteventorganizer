@@ -75,7 +75,9 @@
     "superagent": "^5.1.0"
   },
   "scripts": {
-    "start": "concurrently \"cd seobackend && nodemon server.js\" \"cd seo && npm start\" \"cd seobackend && nodemon hamoniseed.js\"",
+    "server": "concurrently \"cd seobackend && nodemon server.js\" \"cd seobackend && nodemon hamoniseed.js\" ",
+    "client": "cd seo && npm start --prefix seo",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix seo && npm run build --prefix seo"
   },
