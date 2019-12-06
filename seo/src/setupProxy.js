@@ -3,7 +3,7 @@ const url = `https://smarteventorganizer.herokuapp.com:${process.env.PORT}` || '
 
 module.exports = function(app) {
     // add other server routes to path array
-    app.use(proxy(['/api/**'], { target: 'http://localhost:4000' }));
+    app.use(proxy(['/api/**'], { target: 'http://localhost:4000', secure: false, changeOrigin: true }));
     /*app.use(proxy(['/createeventapi', '/createeventapi/add', '/createeventapi/:id', '/createeventapi/update/:id'], { target: url}));
     app.use(proxy(['/updatenewsapi', '/updatenewsapi/add', '/updatenewsapi/:id', '/updatenewsapi/update/:id'], { target: url}));
     app.use(proxy(['/addmembersapi'], { target: url}));
