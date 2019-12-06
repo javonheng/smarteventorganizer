@@ -75,21 +75,14 @@ app.post('/send-campaigns', (req,res) => {
   //.then((msg) => console.log(html));
 })
 
-if (process.env.NODE_ENV === 'production') {
-  const uri = "mongodb://smarteventorganizer:smarteventorganizer1@ds251618.mlab.com:51618/heroku_mwthtzbz"
-  mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true})
-  const connection = mongoose.connection
-  connection.once('open', () => {
-    console.log("Heroku MongoDB database connection established successfully")
-  })
-} else {
-  const uri = "mongodb+srv://javonheng:javonheng@smarteventorganizer-okapp.mongodb.net/test?retryWrites=true&w=majority"
-  mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true})
-  const connection = mongoose.connection
-  connection.once('open', () => {
-    console.log("Localhost MongoDB database connection established successfully")
-  })
-}
+
+const uri = "mongodb+srv://javonheng:javonheng@smarteventorganizer-okapp.mongodb.net/test?retryWrites=true&w=majority"
+mongoose.connect(uri || process.env.MONGODB_URI, {useNewUrlParser: true, useCreateIndex: true}
+)
+const connection = mongoose.connection
+connection.once('open', () => {
+  console.log("MongoDB database connection established successfully")
+})
 
 const createEventRouter = require('./routes/createevent')
 //const createChecklistRouter = require("./routes/checklist");
