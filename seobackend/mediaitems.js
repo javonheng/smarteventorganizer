@@ -16,7 +16,7 @@ app.use(methodOverride('_method'));
 
 // Mongo URI
 if (process.env.NODE_ENV === 'production') {
-  const mongoURI = "mongodb://heroku_mwthtzbz:heroku_mwthtzbz@ds251618.mlab.com:51618/heroku_mwthtzbz"
+  const mongoURI = "mongodb://smarteventorganizer:smarteventorganizer1@ds251618.mlab.com:51618/heroku_mwthtzbz"
   // Create mongo connection
   const conn = mongoose.createConnection(mongoURI, {useNewUrlParser: true, useCreateIndex: true});
   conn.once('open', () => {

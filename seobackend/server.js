@@ -76,7 +76,7 @@ app.post('/send-campaigns', (req,res) => {
 })
 
 if (process.env.NODE_ENV === 'production') {
-  const uri = "mongodb://heroku_mwthtzbz:heroku_mwthtzbz@ds251618.mlab.com:51618/heroku_mwthtzbz"
+  const uri = "mongodb://smarteventorganizer:smarteventorganizer1@ds251618.mlab.com:51618/heroku_mwthtzbz"
   mongoose.connect(uri, {useNewUrlParser: true, useCreateIndex: true})
   const connection = mongoose.connection
   connection.once('open', () => {
