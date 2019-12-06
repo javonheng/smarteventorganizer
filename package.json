@@ -76,7 +76,7 @@
   },
   "scripts": {
     "server": "concurrently \"cd seobackend && nodemon server.js\" \"cd seobackend && nodemon hamoniseed.js\" ",
-    "client": "cd seo && npm start --prefix seo",
+    "client": "cd seo && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix seo && npm run build --prefix seo"
