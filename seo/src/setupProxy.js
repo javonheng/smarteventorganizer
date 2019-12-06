@@ -12,4 +12,5 @@ module.exports = function(app) {
     app.use(proxy(['/userslogin', '/userslogin/:id', '/userslogin/login', '/userslogin/logincheck', '/userslogin/register'], { target: 'http://localhost:4000', secure: false, changeOrigin: true }));
     app.use(proxy(['/allfiles/upload', '/allfiles/files', '/allfiles/files/:filename', '/allfiles/image/:filename', '/allfiles/files/:id' ], { target: 'http://localhost:4000', secure: false, changeOrigin: true }));
     app.use(proxy(['/mediaitems/upload2', '/mediaitems/files2', '/mediaitems/files2/:filename', '/mediaitems/image2/:filename', '/mediaitems/files2/:id' ], { target: 'http://localhost:4000', secure: false, changeOrigin: true }));
+    app.use(proxy(['/send-email', '/send-campaigns'], { target: 'http://localhost:4000', secure: false, changeOrigin: true }));
 }

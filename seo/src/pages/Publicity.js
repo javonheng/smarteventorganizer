@@ -99,7 +99,7 @@ class Publicity extends Component {
 
   sendEmail = _ => {
   (async () => {
-    const rawResponse = await fetch('http://127.0.0.1:4000/send-campaigns', {
+    const rawResponse = await fetch('/send-campaigns', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
