@@ -28,7 +28,7 @@ export default class CheckList extends Component {
     }
   }
   componentDidMount() {
-    axios.get('/createeventapi/'+this.props.match.params.id)
+    axios.get('/api/createeventapi/'+this.props.match.params.id)
       .then(response => {
         this.setState({
           newevent: response.data,
@@ -156,7 +156,7 @@ export default class CheckList extends Component {
         others: this.state.others,
         ontheday: this.state.ontheday,
         }
-      axios.post('/createeventapi/update/'+this.props.match.params.id, updateChecklist)
+      axios.post('/api/createeventapi/update/'+this.props.match.params.id, updateChecklist)
         .then(res => console.log(res.data));
 
       window.location.reload();

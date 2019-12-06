@@ -61,14 +61,14 @@ class Attendance extends Component {
   }
 
   componentDidMount() {
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
       .catch((error) => {
         console.log(error);
       })
-    axios.get('/attendeesapi/')
+    axios.get('/api/attendeesapi/')
       .then(response => {
         this.setState({ attendees: response.data })
         console.log(response)
@@ -83,7 +83,7 @@ class Attendance extends Component {
   }
 
   deleteAttendee(id) {
-    axios.delete('/attendeesapi/'+id)
+    axios.delete('/api/attendeesapi/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({
@@ -106,7 +106,7 @@ class Attendance extends Component {
       isPresent: !presc,
     }
     console.log(newPresence)
-    axios.post('/attendeesapi/update/'+id, newPresence)
+    axios.post('/api/attendeesapi/update/'+id, newPresence)
       .then(res => console.log(res.data));
   }
 

@@ -23,7 +23,7 @@ class AddFiles extends Component {
     var data = new FormData();
     //var imagedata = document.querySelector('input[type="file"]').files[0];
     data.append('file', acceptedFiles[0]);
-    axios.post('/allfiles/upload', data)
+    axios.post('/api/allfiles/upload', data)
       .then(window.alert(
         'Upload Successful'
       ))
@@ -31,7 +31,7 @@ class AddFiles extends Component {
   }
 
   componentDidMount() {
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })

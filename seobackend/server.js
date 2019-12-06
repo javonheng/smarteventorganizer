@@ -26,7 +26,7 @@ next();
 
 app.use(express.json())
 
-app.post('/send-email', (req,res) => {
+app.post('/api/send-email', (req,res) => {
   res.send('Email Sent')
   //Get Variables from query string in the search bar
   const name = req.body.name
@@ -58,7 +58,7 @@ app.post('/send-email', (req,res) => {
   //.then((msg) => console.log(html));
 })
 
-app.post('/send-campaigns', (req,res) => {
+app.post('/api/send-campaigns', (req,res) => {
   res.send('Emails Sent')
   //Get Variables from query string in the search bar
   const recipients = req.body.recipients
@@ -106,16 +106,16 @@ const userslogin = require("./routes/userslogin")
 const mediaitems = require("./mediaitems")
 const allfiles = require("./allfiles")
 
-app.use('/createeventapi', createEventRouter)
+app.use('/api/createeventapi', createEventRouter)
 //app.use('/createchecklistapi', createChecklistRouter)
-app.use('/updatenewsapi', updateNewsRouter)
-app.use('/addmembersapi', membersRouter)
-app.use('/addagendasapi', agendasRouter)
-app.use('/rentalstatusapi', rentalStatusRouter)
-app.use('/attendeesapi', attendeeRouter)
-app.use('/savedpresetapi', savepresetRouter)
-app.use('/mediaitems', mediaitems)
-app.use('/allfiles', allfiles)
+app.use('/api/updatenewsapi', updateNewsRouter)
+app.use('/api/addmembersapi', membersRouter)
+app.use('/api/addagendasapi', agendasRouter)
+app.use('/api/rentalstatusapi', rentalStatusRouter)
+app.use('/api/attendeesapi', attendeeRouter)
+app.use('/api/savedpresetapi', savepresetRouter)
+app.use('/api/mediaitems', mediaitems)
+app.use('/api/allfiles', allfiles)
 
 // Passport middleware
 app.use(passport.initialize());
@@ -123,7 +123,7 @@ app.use(passport.session());
 // Passport config
 require("./routes/passport")(passport);
 // Routes
-app.use("/userslogin", userslogin);
+app.use("/api/userslogin", userslogin);
 
 const path = require('path')
 //Serve Static Assets if in production

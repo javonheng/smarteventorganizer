@@ -45,7 +45,7 @@ export default class EditEvent extends Component {
   }
 
   componentDidMount() {
-    axios.get('/createeventapi/'+this.props.match.params.id)
+    axios.get('/api/createeventapi/'+this.props.match.params.id)
       .then(response => {
         this.setState({
           name: response.data.name,
@@ -79,7 +79,7 @@ export default class EditEvent extends Component {
         console.log(error);
       })
 
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -155,7 +155,7 @@ export default class EditEvent extends Component {
 
     console.log(newEvent);
 
-    axios.post('/createeventapi/update/' + this.props.match.params.id, newEvent)
+    axios.post('/api/createeventapi/update/' + this.props.match.params.id, newEvent)
       .then(res => console.log(res.data));
 
     window.location = '/welcomepage';

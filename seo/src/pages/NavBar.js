@@ -71,7 +71,7 @@ class NavBar extends Component{
   }
 
   componentDidMount() {
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({
           name: response.data[response.data.length-1].name,

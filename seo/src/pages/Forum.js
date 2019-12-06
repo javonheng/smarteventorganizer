@@ -30,7 +30,7 @@ class Forum extends Component {
   }
 
  async omponentDidMount() {
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })

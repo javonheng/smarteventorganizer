@@ -21,7 +21,7 @@ class HomePage extends Component {
   }
 
   componentDidMount() {
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({
           events: response.data[response.data.length-1],
@@ -31,7 +31,7 @@ class HomePage extends Component {
       .catch((error) => {
         console.log(error);
       })
-    axios.get('/updatenewsapi/')
+    axios.get('/api/updatenewsapi/')
       .then(response => {
         this.setState({
           allnews: response.data
@@ -62,13 +62,13 @@ class HomePage extends Component {
     }
     console.log(newUpdate)
     if (this.validateForm()) {
-      axios.post('/updatenewsapi/add', newUpdate)
+      axios.post('/api/updatenewsapi/add', newUpdate)
         .then(res => console.log(res.data));
     }
   }
 
   deleteNews = (id) => {
-    axios.delete('/updatenewsapi/'+id)
+    axios.delete('/api/updatenewsapi/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

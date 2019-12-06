@@ -15,14 +15,14 @@ class AllMembers extends Component {
   }
 
   componentDidMount() {
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
       .catch((error) => {
         console.log(error);
       })
-      axios.get('/mediaitems/files2')
+      axios.get('/api/mediaitems/files2')
         .then(response => {
           this.setState({ readfiles: response.data})
           console.log(this.state.readfiles)
@@ -31,7 +31,7 @@ class AllMembers extends Component {
           console.log(error);
         })
 
-    axios.get('/addmembersapi')
+    axios.get('/api/addmembersapi')
       .then(response => {
         this.setState({ newmemberdet: response.data })
         console.log(this.state.newmemberdet)
@@ -52,7 +52,7 @@ class AllMembers extends Component {
   }
 
   showNewMember = (e) => {
-    axios.get(`/mediaitems/files2/${this.state.inputname}.png`, { responseType: 'arraybuffer'},)
+    axios.get(`/api/mediaitems/files2/${this.state.inputname}.png`, { responseType: 'arraybuffer'},)
       .then(response => {
         const base64 = btoa(
           new Uint8Array(response.data).reduce(
@@ -64,7 +64,7 @@ class AllMembers extends Component {
         console.log(this.state.source)
       })
 
-    axios.get(`/mediaitems/files2/${this.state.inputname}.jpg`, { responseType: 'arraybuffer'},)
+    axios.get(`/api/mediaitems/files2/${this.state.inputname}.jpg`, { responseType: 'arraybuffer'},)
       .then(response => {
         const base64 = btoa(
           new Uint8Array(response.data).reduce(
@@ -78,7 +78,7 @@ class AllMembers extends Component {
   }
 
   deleteMember(id) {
-    axios.delete('/addmembersapi/'+id)
+    axios.delete('/api/addmembersapi/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

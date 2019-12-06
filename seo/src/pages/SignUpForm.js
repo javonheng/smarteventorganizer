@@ -17,7 +17,7 @@ export default class SignUpForm extends Component {
   }
 
   componentDidMount() {
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
@@ -37,7 +37,7 @@ export default class SignUpForm extends Component {
     this.setState({
       event: e.target.value,
     })
-    axios.get('/createeventapi/'+e.target.value) //or this.state.event (id)
+    axios.get('/api/createeventapi/'+e.target.value) //or this.state.event (id)
       .then(response => {
         this.setState({ selectedEvent: response.data.name })
       })

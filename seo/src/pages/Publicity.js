@@ -25,14 +25,14 @@ class Publicity extends Component {
   }
 
   componentDidMount() {
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
       .catch((error) => {
         console.log(error);
       })
-    axios.get('/savedpresetapi/5d8c639d37df76d7fde95b4b')
+    axios.get('/api/savedpresetapi/5d8c639d37df76d7fde95b4b')
       .then(response => {
         this.setState({
           postid: response.data.postid,
@@ -51,7 +51,7 @@ class Publicity extends Component {
       postid: this.state.postid,
       pagename: this.state.pagename,
     }
-    axios.post('/savedpresetapi/update/5d8c639d37df76d7fde95b4b', newpreset)
+    axios.post('/api/savedpresetapi/update/5d8c639d37df76d7fde95b4b', newpreset)
       .then(res => console.log(res.data))
     window.location.reload()
   }
@@ -99,7 +99,7 @@ class Publicity extends Component {
 
   sendEmail = _ => {
   (async () => {
-    const rawResponse = await fetch('/send-campaigns', {
+    const rawResponse = await fetch('/api/send-campaigns', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

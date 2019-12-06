@@ -13,7 +13,7 @@ class FileManager extends Component {
   }
 
   componentDidMount() {
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
@@ -29,7 +29,7 @@ class FileManager extends Component {
       .catch((error) => {
         console.log(error);
       })*/
-    axios.get('/allfiles/files/')
+    axios.get('/api/allfiles/files/')
       .then(response => {
         this.setState({ readfiles: response.data})
         console.log(this.state.readfiles)
@@ -49,7 +49,7 @@ class FileManager extends Component {
     event.preventDefault()
     const id = event.target.id
 
-    axios.delete('/allfiles/files/'+id)
+    axios.delete('/api/allfiles/files/'+id)
       .then(response => { console.log(response.data)})
     window.location.reload()
   }
@@ -59,7 +59,7 @@ class FileManager extends Component {
     var data = new FormData();
     //var imagedata = document.querySelector('input[type="file"]').files[0];
     data.append('file', this.state.file)
-    axios.post('/allfiles/upload', data)
+    axios.post('/api/allfiles/upload', data)
       .then(res => console.log(res.data))
     window.location.reload()
   }

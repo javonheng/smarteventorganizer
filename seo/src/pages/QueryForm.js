@@ -19,7 +19,7 @@ class QueryForm extends Component {
 
   sendEmail = _ => {
     (async () => {
-      const rawResponse = await fetch('/send-email', {
+      const rawResponse = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',

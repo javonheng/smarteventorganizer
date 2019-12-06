@@ -25,7 +25,7 @@ class WelcomePage extends Component {
         console.log(error);
       })*/
       console.log(localStorage.getItem('isLoggedIn'))
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({
           newevent: response.data.map(user => user.name),

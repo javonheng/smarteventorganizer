@@ -19,7 +19,7 @@ class AddMembers extends Component {
   }
 
   componentDidMount() {
-    axios.get('/createeventapi/')
+    axios.get('/api/createeventapi/')
       .then(response => {
         this.setState({ events: response.data })
       })
@@ -61,7 +61,7 @@ class AddMembers extends Component {
         'content-type': 'multipart/form-data'
       }
     }
-    axios.post('/mediaitems/upload2', data, config)
+    axios.post('/api/mediaitems/upload2', data, config)
       .then(res => console.log(res.data));
 
     const newMember = {
@@ -73,7 +73,7 @@ class AddMembers extends Component {
       isInternal: this.state.isInternal,
       }
       if (this.validateForm()) {
-        axios.post('/addmembersapi/add', newMember)
+        axios.post('/api/addmembersapi/add', newMember)
           .then(res => console.log(res.data)
                 && window.alert("New Member added!")
           )
