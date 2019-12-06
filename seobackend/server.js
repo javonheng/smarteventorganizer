@@ -14,6 +14,16 @@ const port = process.env.PORT || 4000
 sgMail.setApiKey('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');
 
 app.use(cors()); //utilize Cors so the browser doesn't restrict data, without it Sendgrid will not send!
+//CORS bypass
+app.use(function(req, res, next) {
+  //must be included these first two
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+next();
+});
+
 app.use(express.json())
 
 app.post('/send-email', (req,res) => {
