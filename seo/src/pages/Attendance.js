@@ -82,7 +82,7 @@ class Attendance extends Component {
     this.props.history.push('/signup')
   }
 
-  deleteAttendee(id) {
+  deleteAttendee = (id) => {
     axios.delete('/api/attendeesapi/'+id)
       .then(response => { console.log(response.data)});
 
