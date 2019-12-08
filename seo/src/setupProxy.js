@@ -2,12 +2,7 @@ const proxy = require('http-proxy-middleware')
 const url = `https://smarteventorganizer.herokuapp.com:${process.env.PORT}` || 'http://localhost:4000'
 
 module.exports = function(app) {
-    // add other server routes to path array
-     if (process.env.NODE_ENV !=== 'production') {
-      app.use(proxy(['/api/**'], { target: 'http://127.0.0.1:4000', secure: false, changeOrigin: true }));
-    } else if (process.env.NODE_ENV === 'production'){
-      app.use(proxy(['/api/**'], { target: `https://smarteventorganizer.herokuapp.com:${process.env.PORT}`, secure: false, changeOrigin: true }));
-    }
+    app.use(proxy(['/api/**'], { target: 'http://127.0.0.1:4000', secure: false, changeOrigin: true }));
     /*app.use(proxy(['/createeventapi', '/createeventapi/add', '/createeventapi/:id', '/createeventapi/update/:id'], { target: url}));
     app.use(proxy(['/updatenewsapi', '/updatenewsapi/add', '/updatenewsapi/:id', '/updatenewsapi/update/:id'], { target: url}));
     app.use(proxy(['/addmembersapi'], { target: url}));
