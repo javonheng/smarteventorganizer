@@ -1,10 +1,11 @@
 const Hamoni = require("hamoni-sync");
 const https = require("https");
-const config = require('./config'); //load config file
 
+const accountId = "5d9d1676-1b20-435a-8906-ebba486b82ac";
+const appId = "1e49e2a24d2c4a48b4f9725d22a379f7";
 let hamoni;
 
-const data = JSON.stringify({ config.HARMONI_ACC_ID, config.HARMONI_APP_ID });
+const data = JSON.stringify({ accountId, appId });
 
 const options = {
   hostname: "api.sync.hamoni.tech",

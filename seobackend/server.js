@@ -4,7 +4,6 @@ const sgMail = require('@sendgrid/mail'); //sendgrid library to send emails
 const mongoose = require('mongoose') //to connect to MongoDB
 const dotenv = require('dotenv')
 const passport = require("passport");
-const config = require('./config'); //load config file
 
 //dotenv.config()
 
@@ -12,7 +11,7 @@ const app = express(); //alias from the express function
 const port = process.env.PORT || 4000
 
 //sendgrid api key
-sgMail.setApiKey(config.SENDGRID_API_KEY);
+sgMail.setApiKey('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');
 
 app.use(cors()); //utilize Cors so the browser doesn't restrict data, without it Sendgrid will not send!
 //CORS bypass
@@ -87,7 +86,7 @@ app.post('/api/send-campaigns', (req,res) => {
 })
 
 
-const uri = config.MONGOOSE_URI;
+const uri = "mongodb+srv://javonheng:javonheng@smarteventorganizer-okapp.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(uri || process.env.MONGODB_URI, {useNewUrlParser: true, useCreateIndex: true}
 )
 const connection = mongoose.connection
