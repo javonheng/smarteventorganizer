@@ -1,9 +1,9 @@
 const proxy = require('http-proxy-middleware')
-const url = `https://smarteventorganizer.herokuapp.com:${process.env.PORT}` || 'http://127.0.0.1:4000' || 'http://127.0.0.1:8000'
+const url = `https://smarteventorganizer.herokuapp.com:${process.env.PORT}` || 'http://127.0.0.1:4000'
 
 module.exports = function(app) {
     // add other server routes to path array
-    app.use(proxy(['/api/**'], { target: 'http://localhost:4000', secure: false, changeOrigin: true }));
+    app.use(proxy(['/api/**'], { target: url, secure: false, changeOrigin: true }));
     /*app.use(proxy(['/createeventapi', '/createeventapi/add', '/createeventapi/:id', '/createeventapi/update/:id'], { target: url}));
     app.use(proxy(['/updatenewsapi', '/updatenewsapi/add', '/updatenewsapi/:id', '/updatenewsapi/update/:id'], { target: url}));
     app.use(proxy(['/addmembersapi'], { target: url}));
